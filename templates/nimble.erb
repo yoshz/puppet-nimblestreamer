@@ -1,0 +1,61 @@
+###############################################
+# port number nimble server listens on
+#
+# default: 8081
+###############################################
+port = <%= @port %>
+
+###############################################
+# logging level
+#
+# the possible values are:
+# error, info, verbose, debug
+#
+# default: info
+###############################################
+logging = <%= @logging %>
+
+###############################################
+# number or worker threads
+#
+# default: 1
+###############################################
+worker_threads = <%= @worker_threads %>
+
+###############################################
+# maximum size of RAM data cache in megabytes
+#
+# default: 0
+###############################################
+max_cache_size = <%= @max_cache_size %>
+
+###############################################
+# maximum size of disk data cache in megabytes
+#
+# default: 0
+###############################################
+max_disk_cache_size = <%= @max_disk_cache_size %>
+
+###############################################
+# path to the directory to store cache
+#
+# default: <empty>
+###############################################
+cache_path = <%= @cache_path %>
+
+###############################################
+# parameters to access wmspanel
+#   (will be filled by registration utility)
+#
+# panel_domain   - wmspanel server address
+# panel_port     - wmspanel server port
+# panel_uuid     - wmspanel account id
+# panel_password - wmspanel account password
+###############################################
+<% if @panel_uuid and @panel_password -%>
+panel_domain = nimble.wmspanel.com
+panel_port = 443
+panel_uuid = <%= @panel_uuid %>
+panel_password = <%= @panel_password %>
+panel_ssl_disabled = false
+<% end %>
