@@ -32,14 +32,7 @@ class nimblestreamer (
   String  $panel_uuid          = '',
   String  $panel_password      = '',
 ) {
-  yumrepo { 'nimblestreamer':
-    descr    => 'Nimble Streamer repository',
-    baseurl  => 'http://nimblestreamer.com/centos/7/$basearch',
-    enabled  => 1,
-    gpgcheck => 1,
-    gpgkey   => 'http://nimblestreamer.com/gpg.key',
-  }
-  package { 'nimble': ensure => latest }
+  include nimblestreamer::install
   file { '/etc/nimble/nimble.conf':
     content  => template('nimblestreamer/nimble.erb'),
     ensure   => 'file',
