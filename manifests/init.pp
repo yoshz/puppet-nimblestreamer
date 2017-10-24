@@ -6,10 +6,11 @@
 # Variables
 # ----------
 #
+# Only mandatory parameters can be set as class arguments.
+# All other parameters can be set using the $parameters argument.
+#
 # For a list of available parameters go to:
 #   http://blog.wmspanel.com/p/nimble-streamer-configuration.html
-#
-# Only mandatory parameters are supported now.
 #
 # Examples
 # --------
@@ -31,16 +32,7 @@ class nimblestreamer (
   String            $cache_path          = '/var/cache/nimble',
   Optional[String]  $panel_uuid          = undef,
   Optional[String]  $panel_password      = undef,
-  Optional[Integer] $ssl_port            = undef,
-  Optional[String]  $ssl_certificate     = undef,
-  Optional[String]  $ssl_certificate_key = undef,
-  Optional[String]  $ssl_certificate_key_pass = undef,
-  Optional[String]  $crossdomain_xml_allow_access_from_domain = undef,
-  Optional[String]  $crossdomain_xml     = undef,
-  Optional[String]  $access_control_allow_origin = undef,
-  Optional[String]  $access_control_allow_credentials = undef,
-  Optional[String]  $access_control_expose_headers = undef,
-  Optional[String]  $access_control_allow_headers = undef,
+  Hash              $parameters          = {},
 ) {
   include nimblestreamer::install
   file { '/etc/nimble/nimble.conf':

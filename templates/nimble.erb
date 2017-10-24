@@ -63,22 +63,6 @@ panel_ssl_disabled = false
 ###############################################
 # various configuration
 ###############################################
-<% if @ssl_port %>ssl_port = <%= @ssl_port %>
+<% @parameters.each do |parameter,value| -%>
+<%= parameter %> = <%= value %>
 <% end -%>
-<% if @ssl_certificate %>ssl_certificate = <%= @ssl_certificate %>
-<% end -%>
-<% if @ssl_certificate_key %>ssl_certificate_key = <%= @ssl_certificate_key %>
-<% end -%>
-<% if @ssl_certificate_key_pass %>ssl_certificate_key_pass = <%= @ssl_certificate_key_pass %>
-<% end -%>
-<% if @crossdomain_xml_allow_access_from_domain %>crossdomain_xml_allow_access_from_domain = <%= @crossdomain_xml_allow_access_from_domain %>
-<% end -%>
-<% if @crossdomain_xml %>crossdomain_xml = <%= @crossdomain_xml %>
-<% end -%>
-<% if @access_control_allow_origin %>access_control_allow_origin = <%= @access_control_allow_origin %>
-<% end -%>
-<% if @access_control_allow_credentials %>access_control_allow_credentials = <%= @access_control_allow_credentials %>
-<% end -%>
-<% if @access_control_expose_headers %>access_control_expose_headers = <%= @access_control_expose_headers %>
-<% end -%>
-<% if @access_control_allow_headers %>access_control_allow_headers = <%= @access_control_allow_headers %><% end -%>

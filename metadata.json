@@ -1,6 +1,6 @@
 {
   "name": "yoshz/nimblestreamer",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "author": "yoshz",
   "summary": "A puppet module to provision nimble streamer",
   "license": "Apache-2.0",
